@@ -1,3 +1,4 @@
+# Create a security group for the instances
 resource "aws_security_group" "web_sg" {
   name        = "web-sg"
   description = "Allow web traffic"
@@ -23,8 +24,4 @@ resource "aws_security_group" "web_sg" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-}
-
-output "security_group_id" {
-  value = aws_security_group.web_sg.id
 }
